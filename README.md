@@ -3,7 +3,7 @@
 # 💧 AquaYeild: Smart Irrigation System
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Hardware: ESP32/Arduino](https://img.shields.io/badge/Hardware-ESP32)](https://www.espressif.com/)
+[![Hardware: ESP32/Arduino](https://img.shields.io/badge/Hardware-ESP32-orange.svg)](https://www.espressif.com/)
 
 **AquaYeild** is a precision agriculture solution that merges **Israel’s high-efficiency irrigation frameworks** with **Machine Learning** to solve the global water crisis in farming. 
 
