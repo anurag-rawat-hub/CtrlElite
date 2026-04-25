@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Dashboard · AquaYield</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="app-layout">
+  <!-- ── Sidebar ─────────────────────────────────────── -->
+  <aside class="dark-sidebar">
+    <div class="brand-section">
+      <span class="brand-name">AQUAYIELD</span>
+      <span class="brand-sub">Platform</span>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">⚲ Overview</a>
+      <a href="dashboard.html" class="nav-link active">𖤓 Live Dashboard</a>
+      <a href="ask_ai.html" class="nav-link">✧ Ask AI</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div class="brand" style="flex-direction:row;align-items:center;">
+        <span class="brand-sub" style="font-size:0.9rem;color:var(--text-pri);">Real-Time Sensor Charts</span>
+      </div>
+      <div class="header-actions">
+        <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">☀</button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="charts-grid">
+      <section class="card">
+        <p class="card-title">ǁ Temperature Trends (°C)</p>
+        <div style="height:180px;width:100%;"><canvas id="tempChart"></canvas></div>
+      </section>
+      <section class="card" style="border-color:var(--color-hum, #06b6d4);">
+        <p class="card-title" style="color:var(--color-hum, #06b6d4);">ǁ Humidity Tracking (%)</p>
+        <div style="height:180px;width:100%;"><canvas id="humChart"></canvas></div>
+      </section>
+      <section class="card" style="border-color:var(--warn);">
+        <p class="card-title" style="color:var(--warn);">ǁ Gas Levels (ppm)</p>
+        <div style="height:180px;width:100%;"><canvas id="gasChart"></canvas></div>
+      </section>
+      
+
+    </div>
+  </main>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

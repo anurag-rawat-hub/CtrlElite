@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AquaYield — Real-time soil moisture monitoring and smart irrigation prediction dashboard." />
+  <title>AquaYield · Soil Moisture Monitor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app-layout">
+  
+  <!-- ── Sidebar ─────────────────────────────────────── -->
+  <aside class="dark-sidebar">
+    <div class="brand-section">
+      <span class="brand-name">AQUAYIELD</span>
+      <span class="brand-sub">Platform</span>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link active">⚲ Overview</a>
+      <a href="dashboard.html" class="nav-link">𖤓 Live Dashboard</a>
+      <a href="ask_ai.html" class="nav-link">✧ Ask AI</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- ── Header ─────────────────────────────────────── -->
+    <header class="header">
+      <div class="brand" style="flex-direction:row;align-items:center;">
+        <span class="brand-sub" style="font-size:0.9rem">System Status:</span>
+      </div>
+      <div class="header-actions">
+        <span id="conn-dot" class="connection-dot" title="Backend connection"></span>
+        <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">☀</button>
+      </div>
+    </header>
+
+    <!-- ── Dashboard grid ────────────────────────────── -->
+    <div class="dashboard-grid">
+
+      <!-- ── Current Moisture Card ──────────────────── -->
+      <section class="card" id="moisture-card" aria-label="Current Moisture">
+        <p class="card-title">ǁ Current Moisture</p>
+
+        <div class="moisture-val" id="moisture-display">–</div>
+
+        <div class="moisture-badge" id="moisture-badge">
+          <span>&#9679;</span>
+          <span id="badge-text">Loading…</span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">Device:</span>
+          <span class="detail-value" id="detail-device">–</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Measured:</span>
+          <span class="detail-value" id="detail-timestamp">–</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Temperature:</span>
+          <span class="detail-value" id="detail-temp">–</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Humidity:</span>
+          <span class="detail-value" id="detail-hum">–</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Gas (ppm):</span>
+          <span class="detail-value" id="detail-gas">–</span>
+        </div>
+      </section>
+
+      <!-- ── Irrigation Prediction Card ────────────── -->
+      <section class="card irr-card" id="irr-card" aria-label="Irrigation Prediction">
+        <div class="irr-header">
+          <p class="card-title" style="margin-bottom:0">ǁ Irrigation Prediction ✦</p>
+          <span class="status-badge pending" id="status-badge">● PENDING</span>
+        </div>
+
+        <div class="irr-metrics">
+          <div class="metric-box">
+            <span class="metric-label">Water Flow Required</span>
+            <span class="metric-val" id="irr-mm">–</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">Pump Time</span>
+            <span class="metric-val" id="irr-pump">–</span>
+          </div>
+        </div>
+
+        <div class="irr-details">
+          <div class="irr-row">
+            <span class="irr-row-label">Status:</span>
+            <span class="irr-row-val" id="irr-status-text" style="color:var(--warn)">Pending ✦</span>
+          </div>
+          <div class="irr-row">
+            <span class="irr-row-label">Device:</span>
+            <span class="irr-row-val" id="irr-device">–</span>
+          </div>
+          <div class="irr-row">
+            <span class="irr-row-label">Predicted:</span>
+            <span class="irr-row-val" id="irr-predicted-ago">–</span>
+          </div>
+        </div>
+
+        <div class="last-update">
+          Last updated:
+          <strong id="last-updated-text">–</strong>
+        </div>
+      </section>
+
+      <!-- ── Sensor History ─────────────────────────── -->
+      <section class="card history-card" aria-label="Sensor History">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <p class="card-title">ǁ Sensor History</p>
+          <button class="refresh-btn" id="refresh-history-btn" aria-label="Refresh history">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Refresh
+          </button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Device</th>
+                <th>Moisture (%)</th>
+                <th>Temperature (°C)</th>
+                <th>Humidity (%)</th>
+                <th>Water Flow (Req)</th>
+                <th>Pump (min)</th>
+              </tr>
+            </thead>
+            <tbody id="history-tbody">
+              <tr><td colspan="7" class="no-data">Loading history…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+
+<!-- Toast notification -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
