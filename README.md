@@ -3,7 +3,7 @@
 # 💧 AquaYeild: Smart Irrigation System
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Hardware: ESP32/Arduino](https://img.shields.io/badge/Hardware-ESP32%2FArduino-orange.svg)](https://www.espressif.com/)
+[![Hardware: ESP32/Arduino](https://img.shields.io/badge/Hardware-ESP32)](https://www.espressif.com/)
 
 **AquaYeild** is a precision agriculture solution that merges **Israel’s high-efficiency irrigation frameworks** with **Machine Learning** to solve the global water crisis in farming. 
 
@@ -62,15 +62,19 @@ Moving beyond simple timers, our "Decision Engine" uses:
 
 ## 📸 Screenshots
 
-| **Web Dashboard** | 
+### Web Dashboard
 
 <img width="1873" height="899" alt="Screenshot 2026-04-25 110533" src="https://github.com/user-attachments/assets/f8c2ab50-ad40-4a41-bd56-418a40fef38a" /><br>
-| *Real-time analytics & graphs* |
+### Real-time analytics & graphs
 <img width="1915" height="883" alt="Screenshot 2026-04-25 110617" src="https://github.com/user-attachments/assets/9a6405e7-413d-44b3-9e16-524fd1ee5b26" />
 
-| **WhatsApp Bot** || *Remote alerts* |
+### <pre> WhatsApp remote alerts                                         Hardware </pre>
 
 <img height="500" alt="WhatsApp Image 2026-04-25 at 11 12 34 AM" src="https://github.com/user-attachments/assets/dcde24ab-a890-4ec2-a4fd-a22540c953e4" />
+
+
+<img  height="400" alt="WhatsApp Image 2026-04-25 at 12 47 52 PM" src="https://github.com/user-attachments/assets/903d7370-5e7e-4ba7-829c-38847bdae96f" />
+
 
 
 ---
