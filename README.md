@@ -64,7 +64,9 @@ Moving beyond simple timers, our "Decision Engine" uses:
 
 | **Web Dashboard** | **WhatsApp Bot** |
 | :---: | :---: |
-| ![Dashboard](./assets/dashboard_sample.png) | ![WhatsApp](./assets/whatsapp_sample.png) |
+<img width="1873" height="899" alt="Screenshot 2026-04-25 110533" src="https://github.com/user-attachments/assets/f8c2ab50-ad40-4a41-bd56-418a40fef38a" />
+<img width="1915" height="883" alt="Screenshot 2026-04-25 110617" src="https://github.com/user-attachments/assets/9a6405e7-413d-44b3-9e16-524fd1ee5b26" />
+| ![WhatsApp]  |
 | *Real-time analytics & graphs* | *Remote commands & alerts* |
 
 ---
